@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript in HTML</title>
+</head>
+<body>
+
+<script>
+
+  function printTable(num) {
+    let i = 1;
+    while (i <= 10) {
+      console.log(`${num} * ${i} = ${num * i}`);
+      i++;
+    }
+  }
+
+  function printTriangleWhile(rows) {
+    let i = 1;
+    while (i <= rows) {
+      let j = 1;
+      let pattern = '';
+      while (j <= i) {
+        pattern += '* ';
+        j++;
+      }
+      console.log(pattern);
+      i++;
+    }
+  }
+
+  function printTriangleDoWhile(rows) {
+    let i = 1;
+    do {
+      let j = 1;
+      let pattern = '';
+      do {
+        pattern += '* ';
+        j++;
+      } while (j <= i);
+      console.log(pattern);
+      i++;
+    } while (i <= rows);
+  }
+
+  function createFriendInfo(name, age, hobby) {
+    return {
+      name: name,
+      age: age,
+      hobby: hobby
+    };
+  }
+
+  const friend1 = createFriendInfo('John', 25, 'Reading');
+  const friend2 = createFriendInfo('Alice', 30, 'Gardening');
+
+  console.log(friend1);
+  console.log(friend2);
+
+  const numbers = [19, 18, 25, 17, 22, 125, 155];
+  for (let num of numbers) {
+    console.log(`Multiplication table of ${num}:`);
+    printTable(num);
+    console.log('\n');
+  }
+
+  console.log('Triangle pattern using while loop:');
+  printTriangleWhile(5);
+
+  console.log('\n');
+
+  console.log('Triangle pattern using do-while loop:');
+  printTriangleDoWhile(5);
+</script>
+
+</body>
+</html>
